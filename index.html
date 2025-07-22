@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hensubslash - stream your favorite hentai without ads for free</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/LeiamNash/Hensubslash/refs/heads/main/app/src/main/ic_launcher-web.png"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+    }
+    .app-info h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .app-info .developer {
+      color: #ADD8E6;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .badges {
+      display: flex;
+      gap: 30px;
+      margin: 20px 0;
+      color: #aaa;
+    }
+    .badges div {
+      text-align: center;
+      font-size: 14px;
+    }
+    .install-btn {
+      display: inline-block;
+      background-color: #3574f0;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 24px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      margin: 15px 0;
+      cursor: pointer;
+    }
+    .screenshots {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .screenshots img {
+      height: 400px;
+      border-radius: 8px;
+      border: 1px solid #444;
+    }
+    h3 {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+    .tags {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .tag {
+      background-color: #2c2c2c;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 13px;
+      color: #ccc;
+    }
+    .data-safety {
+      background-color: #1e1e1e;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    .data-safety p {
+      font-size: 14px;
+      margin: 8px 0;
+    }
+    .footer-link {
+      color: #3ea6ff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://raw.githubusercontent.com/LeiamNash/Hensubslash/refs/heads/main/app/src/main/ic_launcher-web.png" alt="App Icon" class="app-icon">
+      <div class="app-info">
+        <h1>Hensubslash</h1>
+        <a class="developer" href="https://www.facebook.com/LeiamNashRebirth">LeiamNash</a>
+      </div>
+    </div>
+
+    <div class="badges">
+      <div>
+        <strong>3.1</strong><br>
+        version
+      </div>
+      <div>
+        <strong>jul 18, 2025</strong><br>
+        last update
+      </div>
+      <div>
+        <strong>3.0 MB</strong><br>
+        Size
+      </div>
+      <div>
+        <strong id="downloadCount">0</strong><br>
+        Downloads
+      </div>
+    </div>
+
+    <a class="install-btn" id="installBtn" href="https://github.com/LeiamNash/Hensubslash/releases/download/3.1/hensubslash.v3.1.apk" target="_blank">Install</a>
+    
+    <div class="screenshots">
+      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/hensubweb/refs/heads/main/Screenshot_2025-07-22-15-35-33-253_com.leiamnash.hensubslash.jpg" alt="screenshot">
+      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/hensubweb/refs/heads/main/Screenshot_2025-07-22-15-36-54-957_com.leiamnash.hensubslash.jpg" alt="screenshot">
+      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/hensubweb/refs/heads/main/Screenshot_2025-07-22-15-36-05-332_com.leiamnash.hensubslash.jpg" alt="screenshot">
+      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/hensubweb/refs/heads/main/Screenshot_2025-07-22-15-36-29-079_com.leiamnash.hensubslash.jpg" alt="screenshot">
+    </div>
+
+    <h3>About this app</h3>
+    <p>Watch your favorite hentai without ads for free, enjoy the unlimited streaming up to 1080, safe and secured.</p>
+    <div class="tags">
+      <div class="tag">Entertainment</div>
+      <div class="tag">Nsfw</div>
+      <div class="tag">Streaming Content</div>
+    </div>
+
+    <h3>What's New?</h3>
+    <p>added fullscreen streaming view for all android devices, weak signal optimization, fast streaming onload and slow auto playback has been fixed.</p>
+
+    <h3>Data safety</h3>
+    <div class="data-safety">
+      <p>🔒 No data shared with third parties</p>
+      <p>📵 No data collected</p>
+      <p>❌ App doesn't provide a way to request data deletion</p>
+    </div>
+  </div>
+
+  <script>
+    let baseDownloads = 1;
+    const downloadKey = "hensubslash_downloaded";
+    const downloadCountElement = document.getElementById("downloadCount");
+    let savedCount = parseInt(localStorage.getItem("hensubslash_count")) || baseDownloads;
+    downloadCountElement.innerText = savedCount.toLocaleString();
+
+    document.getElementById("installBtn").addEventListener("click", function () {
+      const alreadyDownloaded = localStorage.getItem(downloadKey);
+      if (!alreadyDownloaded) {
+        savedCount++;
+        localStorage.setItem(downloadKey, "true");
+        localStorage.setItem("hensubslash_count", savedCount);
+        downloadCountElement.innerText = savedCount.toLocaleString();
+      }
+    });
+  </script>
+</body>
+</html>
